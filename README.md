@@ -2,7 +2,7 @@
 
 Teaching Science Book/Chapter to LLM for QA
 
-This repository contains a framework for extracting, structuring, and leveraging textbook content to enhance question-answering (QA) performance in a small Language Model (LLM). The project is divided into four phases: data processing, LLM evaluation, local deployment, and cloud automation.
+This repository(WIP) contains a framework for extracting, structuring, and leveraging textbook content to enhance question-answering (QA) performance in a small Language Model (LLM). The project is divided into four phases: data processing, LLM evaluation, local deployment, and cloud automation.
 
 Table of Contents
 
