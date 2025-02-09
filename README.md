@@ -14,11 +14,8 @@ Phase 3: Local Deployment and Automation
 
 Phase 4: Cloud Deployment & Automation
 
-Setup & Installation
 
-Contributing
 
-License
 
 Phase 1: Data Processing
 
