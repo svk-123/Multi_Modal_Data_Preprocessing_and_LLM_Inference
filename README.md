@@ -1,6 +1,8 @@
 # Multi_Modal_Data_LLM
 
 Teaching Science Book/Chapter to LLM for QA
+-- initially, test with single chapter
+-- once matured, add larger content 
 
 This repository(WIP) contains a framework for extracting, structuring, and leveraging textbook content to enhance question-answering (QA) performance in a small Language Model (LLM). The project is divided into four phases: data processing, LLM evaluation, local deployment, and cloud automation.
 
