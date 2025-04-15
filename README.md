@@ -1,104 +1,95 @@
-# Multi_Modal_Data_LLM
+# 📘 Teaching Science Book/Chapter to LLM for QA
 
-Teaching Science Book/Chapter to LLM for QA
--- initially, test with single chapter
--- once matured, add larger content 
+*Initially, test with single chapter – once matured, add larger content.*
 
-This repository(WIP) contains a framework for extracting, structuring, and leveraging textbook content to enhance question-answering (QA) performance in a small Language Model (LLM). The project is divided into four phases: data processing, LLM evaluation, local deployment, and cloud automation.
+This repository (WIP) contains a framework for extracting, structuring, and leveraging textbook content to enhance question-answering (QA) performance in a small Language Model (LLM). The project is divided into four phases:
 
-Table of Contents
+- Data processing  
+- LLM evaluation  
+- Local deployment  
+- Cloud automation
 
-Phase 1: Data Processing
+---
 
-Phase 2: Evaluating LLM Performance
+## 📚 Table of Contents
 
-Phase 3: Local Deployment and Automation
+- [Phase 1: Data Processing](#phase-1-data-processing)
+- [Phase 2: Evaluating LLM Performance](#phase-2-evaluating-llm-performance)
+- [Phase 3: Local Deployment and Automation](#phase-3-local-deployment-and-automation)
+- [Phase 4: Cloud Deployment & Automation](#phase-4-cloud-deployment--automation)
 
-Phase 4: Cloud Deployment & Automation
+---
 
+## Phase 1: Data Processing
 
+### Extracting and Structuring Textbook Content
 
+The textbook is in PDF format and contains multi-modal content (text, images, tables, and equations). We use the `unstructured` library for efficient extraction and preprocessing.
 
-Phase 1: Data Processing
+#### Extracting Data from PDF
 
-Extracting and Structuring Textbook Content
+- Use `unstructured` to partition and extract structured text, tables, images, and equations.
+- Identify different content types and store them separately for further processing.
 
-The textbook is in PDF format and contains multi-modal content (text, images, tables, and equations). We use the unstructured library for efficient extraction and preprocessing.
+#### Preprocessing & Structuring Data
 
-1. Extracting Data from PDF
+- Convert extracted content into structured formats such as JSON, Markdown, or a database.
+- Format tables and figures separately to ensure proper retrieval during inference.
+- Perform OCR on images if needed to extract embedded text.
+- Store textbook embeddings in a vector database for retrieval-based answering.
 
-Use unstructured to partition and extract structured text, tables, images, and equations.
+---
 
-Identify different content types and store them separately for further processing.
-
-2. Preprocessing & Structuring Data
-
-Convert extracted content into structured formats such as JSON, Markdown, or a database.
-
-Format tables and figures separately to ensure proper retrieval during inference.
-
-Perform OCR on images if needed to extract embedded text.
-
-Store textbook embeddings in a vector database for retrieval-based answering.
-
-Phase 2: Evaluating LLM Performance
+## Phase 2: Evaluating LLM Performance
 
 We evaluate a small LLM using three approaches:
 
-1. Baseline - Direct Question Answering
+### Baseline - Direct Question Answering
 
-Directly feed textbook-related questions to the LLM without additional knowledge.
+- Directly feed textbook-related questions to the LLM without additional knowledge.
+- Evaluate its accuracy and limitations.
 
-Evaluate its accuracy and limitations.
+### Fine-tuning for Domain Adaptation
 
-2. Fine-tuning for Domain Adaptation
+- Convert extracted textbook content into a structured Q&A dataset.
+- Experiment with full fine-tuning and PEFT (Parameter-Efficient Fine-Tuning).
+- Measure accuracy improvements compared to the baseline.
 
-Convert extracted textbook content into a structured Q&A dataset.
+### Retrieval-Augmented Generation (RAG) Implementation
 
-Experiment with full fine-tuning and PEFT (Parameter-Efficient Fine-Tuning).
+- Convert textbook content into vector embeddings.
+- Implement similarity search to retrieve relevant textbook sections during inference.
+- Use `LangChain` or `LlamaIndex` to integrate the RAG pipeline.
+- Evaluate improvements in response accuracy.
 
-Measure accuracy improvements compared to the baseline.
+---
 
-3. Retrieval-Augmented Generation (RAG) Implementation
+## Phase 3: Local Deployment and Automation
 
-Convert textbook content into vector embeddings.
+### Deploy the RAG-based Q&A System Locally
 
-Implement similarity search to retrieve relevant textbook sections during inference.
+- Develop a framework to automate textbook ingestion for new chapters.
+- Host the system using local APIs or UI interfaces.
+- Manage experiments and versions using MLflow.
+- Use Docker for portability and reproducibility.
 
-Use LangChain or LlamaIndex to integrate the RAG pipeline.
+### Build a Local Textbook Agent
 
-Evaluate improvements in response accuracy.
+- Implement an agent-based system that can dynamically interact with textbook content.
+- Explore LangChain Agents or custom retrieval strategies.
 
-Phase 3: Local Deployment and Automation
+---
 
-1. Deploy the RAG-based Q&A System Locally
+## Phase 4: Cloud Deployment & Automation
 
-Develop a framework to automate textbook ingestion for new chapters.
+### Migrate the Local System to the Cloud
 
-Host the system using local APIs or UI interfaces.
+- Select a cloud provider: GCP, AWS, or Azure.
+- Adapt code to use cloud-native services for storage, indexing, and model hosting.
 
-Manage experiments and versions using MLflow.
+### Automate the Workflow in the Cloud
 
-Use Docker for portability and reproducibility.
+- Set up Cloud Workflows to automate textbook processing, fine-tuning, and RAG deployment.
+- Implement CI/CD pipelines for continuous integration and updates.
+- Use serverless or container-based inference for scalable performance.
 
-2. Build a Local Textbook Agent
-
-Implement an agent-based system that can dynamically interact with textbook content.
-
-Explore LangChain Agents or custom retrieval strategies.
-
-Phase 4: Cloud Deployment & Automation
-
-1. Migrate the Local System to the Cloud
-
-Select a cloud provider: GCP, AWS, or Azure.
-
-Adapt code to use cloud-native services for storage, indexing, and model hosting.
-
-2. Automate the Workflow in the Cloud
-
-Set up Cloud Workflows to automate textbook processing, fine-tuning, and RAG deployment.
-
-Implement CI/CD pipelines for continuous integration and updates.
-
-Use serverless or container-based inference for scalable performance.
