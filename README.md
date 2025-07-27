@@ -1,7 +1,5 @@
 # 📘 Teaching Science Book/Chapter to LLM for QA
 
-*Initially, test with single chapter – once matured, add larger content.*
-
 This repository (WIP) contains a framework for extracting, structuring, and leveraging textbook content to enhance question-answering (QA) performance in a small Language Model (LLM). The project is divided into four phases:
 
 - Data processing  
@@ -15,8 +13,7 @@ This repository (WIP) contains a framework for extracting, structuring, and leve
 
 - [Phase 1: Data Processing](#phase-1-data-processing)
 - [Phase 2: Evaluating LLM Performance](#phase-2-evaluating-llm-performance)
-- [Phase 3: Local Deployment and Automation](#phase-3-local-deployment-and-automation)
-- [Phase 4: Cloud Deployment & Automation](#phase-4-cloud-deployment--automation)
+- [Phase 3: Local Deployment and Automation](#phase-3-local/cloud-deployment-and-automation)
 
 ---
 
@@ -64,32 +61,7 @@ We evaluate a small LLM using three approaches:
 
 ---
 
-## Phase 3: Local Deployment and Automation
+## Phase 3: Local/Cloud Deployment and Automation
+- In progress...
 
-### Deploy the RAG-based Q&A System Locally
-
-- Develop a framework to automate textbook ingestion for new chapters.
-- Host the system using local APIs or UI interfaces.
-- Manage experiments and versions using MLflow.
-- Use Docker for portability and reproducibility.
-
-### Build a Local Textbook Agent
-
-- Implement an agent-based system that can dynamically interact with textbook content.
-- Explore LangChain Agents or custom retrieval strategies.
-
----
-
-## Phase 4: Cloud Deployment & Automation
-
-### Migrate the Local System to the Cloud
-
-- Select a cloud provider: GCP, AWS, or Azure.
-- Adapt code to use cloud-native services for storage, indexing, and model hosting.
-
-### Automate the Workflow in the Cloud
-
-- Set up Cloud Workflows to automate textbook processing, fine-tuning, and RAG deployment.
-- Implement CI/CD pipelines for continuous integration and updates.
-- Use serverless or container-based inference for scalable performance.
 
